@@ -1,0 +1,14 @@
+services:
+  postgres:
+    container_name: home_stock_manager_db_container
+    image: bitnami/postgresql:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=homestockmanagerdb
+    volumes:
+      - home_stock_manager_db_pg_data:/bitnami/postgresql
+volumes:
+  home_stock_manager_db_pg_data:
